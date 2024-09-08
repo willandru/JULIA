@@ -1,0 +1,22 @@
+________ECUACIONES DIFERENCIALES_____________
+
+
+equations.jl ---> standar solver of differential equations
+
+Lo mejor es tener ecuaciones diferenciales donde dx1/dt = .... , dx2/dt = ....,
+ya que se obtendran la mayor fcantidad de formas de resolverlo, anque si bien esto no siempre es posible.
+
+Funciones 'IMMPLACE' QUE LLEVAN EL SIGNO '!'<- Indican que el primer argumento pasado a la funcion sera llenado
+o su valor será asignado dentor de la funcion misma
+
+
+function rober! (du, u, p, t)
+    y1,y2,y3=u
+    k1,k2,k3=p
+    du[1]= -k1*y1+k3*y2*y3
+    du[2]= k1*y1-k2*y2^2-k3*y2*y3
+    du[3]= k2*y2^2
+    nothing                          #nothing is returned from this function
+end
+
+rober¡ (generic function with 1 method)
